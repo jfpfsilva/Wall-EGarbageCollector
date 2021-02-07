@@ -28,8 +28,9 @@ public class Directions {
     public void calcNewDirection(char move) {
         //Ignore all the moves that are not N,S,E and O.
         if(this.moves.containsKey(move)){
-            this.x += this.moves.get(move).getX();
-            this.y += this.moves.get(move).getY();
+            CardinalMoves cardinalMoves = this.moves.get(move);
+            this.x += cardinalMoves.getX();
+            this.y += cardinalMoves.getY();
             uniquePositions.add(szudzikPairing(x, y));
         }else{
             throw new IllegalArgumentException("Character not valid: " + move);

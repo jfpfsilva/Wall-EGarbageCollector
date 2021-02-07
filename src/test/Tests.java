@@ -45,6 +45,12 @@ public class Tests {
         assertEquals(2,countGarbageBalls("NSNSNSNSNS"));
     } 
 
+    @Test
+    public void testGarbageBalls_symmetric(){
+        assertEquals(countGarbageBalls("NESO"),countGarbageBalls("NOSE"));
+    } 
+
+
     @Test()
     public void testGarbageBalls_CasoBicudo(){
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
